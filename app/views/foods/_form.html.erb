@@ -20,7 +20,7 @@
     <%= form.label :expiry_date %>
     <%= form.date_field :expiry_date %>
   </div>
-
+  <%= form.hidden_field :user_id, value:current_user.id %>
   <div class="actions">
     <%= form.submit %>
   </div>
