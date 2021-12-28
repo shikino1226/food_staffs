@@ -16,7 +16,13 @@
       <tr>
         <td><%= food.name %></td>
         <td><%= food.expiry_date %></td>
-        <td>賞味期限まであと<%= (food.expiry_date - Date.current).to_i %>日</td>
+        <% if (food.expiry_date - Date.current).to_i > 0 %>
+          <td>賞味期限まであと<%= (food.expiry_date - Date.current).to_i %>日</td>
+        <% elsif (food.expiry_date - Date.current).to_i == 0 %>
+          <td>本日賞味期限です</td>
+        <% else %>
+          <td>賞味期限から<%= (Date.current - food.expiry_date).to_i %>日過ぎています</td>
+        <% end %>
         <td><%= link_to 'Show', food %></td>
         <td><%= link_to 'Edit', edit_food_path(food) %></td>
         <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
