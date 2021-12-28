@@ -30,7 +30,7 @@ class RecipeFoodsController < ApplicationController
   # PATCH/PUT /recipe_foods/1 or /recipe_foods/1.json
   def update
     if @recipe_food.update(recipe_food_params)
-      redirect_to recipe_path(id: @recipe.id), status: :updated
+      redirect_to (recipe_url (@recipe_food.recipe.id))
     end
   end
 
@@ -39,7 +39,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: "Recipe food was successfully destroyed." }
+      format.html { redirect_to (recipe_url (@recipe_food.recipe.id)), notice: "Recipe food was successfully destroyed." }
       format.json { head :no_content }
     end
   end
