@@ -1,3 +1,7 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
-<%= link_to "食材を見る", foods_path(current_user.id) %>
+<%if user_signed_in? %>
+  <%= link_to "食材を見る", foods_path(current_user.id) %>
+<% else %>
+  <%= link_to "ログイン", new_user_session_path, class: "link_to_login" %>
+<%end%>
