@@ -1,0 +1,27 @@
+<%= form_with(model: process) do |form| %>
+  <% if process.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(process.errors.count, "error") %> prohibited this process from being saved:</h2>
+
+      <ul>
+        <% process.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :step %>
+    <%= form.text_field :step %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recipe_id %>
+    <%= form.number_field :recipe_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -15,5 +15,10 @@
   <%= @recipe.user_id %>
 </p>
 
+<p>
+  <strong>食材一覧</strong>
+  <%= @ingredients.name %>
+</p>
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

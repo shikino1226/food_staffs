@@ -3,7 +3,10 @@ class IngredientController < ApplicationController
     @ingredient = Recipe.new(ingredient_params)
   end
   def create
-    @ingredient = Recipe.new(ingredient_params)
+    @ingredient = Ingredient.new(ingredient_params)
+    if @ingredient.save
+      redirect_to recipe_path(@ingredient.recipe_id)
+    end
   end
   private
 
