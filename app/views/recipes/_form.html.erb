@@ -21,10 +21,7 @@
     <%= form.text_field :how_to_make %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id, value:current_user.id %>
 
   <div class="actions">
     <%= form.submit %>
