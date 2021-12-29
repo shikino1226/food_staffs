@@ -10,5 +10,13 @@
   <%= @food.expiry_date %>
 </p>
 
+<dl class="searchbox">
+  <%= search_form_for @search, url: search_recipes_path do |f| %>
+    <dt hidden><%= f.text_field :name_or_recipe_foods_contents_cont ,value: @food.name %></dt>
+    <dd><%= f.submit ("この食材を使ったレシピを検索する") , class: 'search-btn'%></dd>
+  <% end %>
+</dl>
+
+
 <%= link_to 'Edit', edit_food_path(@food) %> |
 <%= link_to 'Back', foods_path %>
