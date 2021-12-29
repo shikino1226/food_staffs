@@ -1,3 +1,4 @@
+<h2>検索結果は<%= @search_recipes_count %>件です</h2>
 <% @search_recipes.each do |recipe| %>
   <tr>
     <td><%= recipe.name %></td>
@@ -6,3 +7,5 @@
     <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+<br>
+<%= link_to 'Back', :back %>
