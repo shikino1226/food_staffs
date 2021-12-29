@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def set_search
     #@search = Article.search(params[:q])
     @search = Recipe.ransack(params[:q]) #ransackメソッド推奨
-    @search_recipes = @search.result
+    @search_recipes = @search.result.distinct
     @search_recipes_count = @search.result(distinct: true).count
   end
 
