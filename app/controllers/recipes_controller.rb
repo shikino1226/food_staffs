@@ -10,8 +10,8 @@ class RecipesController < ApplicationController
   def show
     @recipe_food = RecipeFood.new
     @recipe_foods = RecipeFood.where(recipe_id: @recipe.id)
-    @process = Process.new
-    @process = Process.where(recipe_id: @recipe.id)
+    @recipe_process = RecipeProcess.new
+    @recipe_processes = RecipeProcess.where(recipe_id: @recipe.id)
   end
 
   # GET /recipes/new

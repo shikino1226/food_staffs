@@ -10,18 +10,25 @@
   <%= @recipe.user_id %>
 </p>
 
-<tbody>
-  <% @recipe_foods.each do |recipe_food| %>
+<table>
+  <thead>
     <tr>
-      <td><%= recipe_food.contents %></td>
-      <td><%= recipe_food.recipe_id %></td>
-      <td><%= recipe_food.process_id %></td>
-      <td><%= link_to 'Show', recipe_food %></td>
-      <td><%= link_to 'Edit', edit_recipe_food_path(recipe_food) %></td>
-      <td><%= link_to 'Destroy', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <th>Contents</th>
+      <th colspan="3"></th>
     </tr>
-  <% end %>
-</tbody>
+  </thead>
+
+  <tbody>
+    <% @recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.contents %></td>
+        <td><%= link_to 'Show', recipe_food %></td>
+        <td><%= link_to 'Edit', edit_recipe_food_path(recipe_food) %></td>
+        <td><%= link_to 'Destroy', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= form_with model: @recipe_food do |form| %>
   <% if @recipe_food.errors.any? %>
@@ -48,13 +55,33 @@
   </div>
 <% end %>
 
-<%= form_with model: @process do |form| %>
-  <% if @process.errors.any? %>
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipe_processes.each do |recipe_process| %>
+      <tr>
+        <td><%= recipe_process.step %></td>
+        <td><%= link_to 'Show', recipe_process %></td>
+        <td><%= link_to 'Edit', edit_recipe_process_path(recipe_process) %></td>
+        <td><%= link_to 'Destroy', recipe_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= form_with model: @recipe_process do |form| %>
+  <% if @recipe_process.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@process.errors.count, "error") %> prohibited this process from being saved:</h2>
+      <h2><%= pluralize(@recipe_process.errors.count, "error") %> prohibited this recipe_process from being saved:</h2>
 
       <ul>
-        <% @process.errors.each do |error| %>
+        <% @recipe_process.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -66,10 +93,7 @@
     <%= form.text_field :step %>
   </div>
 
-  <div class="field">
-    <%= form.label :recipe_id %>
-    <%= form.number_field :recipe_id %>
-  </div>
+  <%= form.hidden_field :recipe_id, value:@recipe.id %>
 
   <div class="actions">
     <%= form.submit %>

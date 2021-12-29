@@ -25,7 +25,7 @@ class RecipeProcessesController < ApplicationController
 
     respond_to do |format|
       if @recipe_process.save
-        format.html { redirect_to recipe_process_url(@recipe_process), notice: "Recipe process was successfully created." }
+        format.html { redirect_to (recipe_url (@recipe_process.recipe.id)), notice: "Recipe process was successfully created." }
         format.json { render :show, status: :created, location: @recipe_process }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class RecipeProcessesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe_process.update(recipe_process_params)
-        format.html { redirect_to recipe_process_url(@recipe_process), notice: "Recipe process was successfully updated." }
+        format.html { redirect_to (recipe_url (@recipe_process.recipe.id)), notice: "Recipe process was successfully updated." }
         format.json { render :show, status: :ok, location: @recipe_process }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class RecipeProcessesController < ApplicationController
     @recipe_process.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipe_processes_url, notice: "Recipe process was successfully destroyed." }
+      format.html { redirect_to (recipe_url (@recipe_process.recipe.id)), notice: "Recipe process was successfully destroyed." }
       format.json { head :no_content }
     end
   end
