@@ -10,7 +10,20 @@
   <%= @recipe.user_id %>
 </p>
 
-<%= render partial: "recipe_foods", collection: @recipe_foods %>
+<table>
+  <thead>
+    <tr>
+      <th>食材</th>
+      <th>量</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: "recipe_foods", collection: @recipe_foods %>
+  </tbody>
+</table>
+
 <%= render "add_contents" %>
 <%= render "recipe_process" %>
 <%= render "add_step" %>
