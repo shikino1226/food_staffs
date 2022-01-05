@@ -1,0 +1,24 @@
+<%= form_with model: @recipe_process do |form| %>
+  <% if @recipe_process.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe_process.errors.count, "error") %> prohibited this recipe_process from being saved:</h2>
+
+      <ul>
+        <% @recipe_process.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <p>作り方を登録する</p>
+    <%= form.text_field :step %>
+  </div>
+
+  <%= form.hidden_field :recipe_id, value:@recipe.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

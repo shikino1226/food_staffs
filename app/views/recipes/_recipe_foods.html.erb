@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>食材</th>
+      <th>量</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= recipe_foods.contents %></td>
+      <td><%= recipe_foods.quantity %></td>
+      <td><%= link_to 'Show', recipe_foods %></td>
+      <td><%= link_to 'Edit', edit_recipe_food_path(recipe_foods) %></td>
+      <td><%= link_to 'Destroy', recipe_foods, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  </tbody>
+</table>
