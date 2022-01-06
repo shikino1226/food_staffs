@@ -10,15 +10,16 @@
       </ul>
     </div>
   <% end %>
+  <% if @recipe.user_id == current_user.id %>
+    <div class="field">
+      <p>作り方を登録する</p>
+      <%= form.text_field :step %>
+    </div>
 
-  <div class="field">
-    <p>作り方を登録する</p>
-    <%= form.text_field :step %>
-  </div>
+    <%= form.hidden_field :recipe_id, value:@recipe.id %>
 
-  <%= form.hidden_field :recipe_id, value:@recipe.id %>
-
-  <div class="actions">
-    <%= form.submit ("追加") %>
-  </div>
+    <div class="actions">
+      <%= form.submit ("追加") %>
+    </div>
+  <% end %>
 <% end %>

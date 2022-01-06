@@ -10,9 +10,11 @@
     <% @recipe_processes.each do |recipe_process| %>
       <tr>
         <td><%= recipe_process.step %></td>
-        <td><%= link_to 'Show', recipe_process %></td>
-        <td><%= link_to 'Edit', edit_recipe_process_path(recipe_process) %></td>
-        <td><%= link_to 'Destroy', recipe_process, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if @recipe.user_id == current_user.id %>
+            <%= link_to '削除する', recipe_foods, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

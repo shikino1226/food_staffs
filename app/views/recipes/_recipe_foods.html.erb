@@ -1,7 +1,9 @@
 <tr>
   <td><%= recipe_foods.contents %></td>
   <td><%= recipe_foods.quantity %></td>
-  <td><%= link_to 'Show', recipe_foods %></td>
-  <td><%= link_to 'Edit', edit_recipe_food_path(recipe_foods) %></td>
-  <td><%= link_to 'Destroy', recipe_foods, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td>
+    <% if @recipe.user_id == current_user.id %>
+      <%= link_to '削除する', recipe_foods, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </td>
 </tr>
