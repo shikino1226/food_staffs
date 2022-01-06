@@ -3,6 +3,9 @@
 <p>
   <strong>レシピ名</strong>
   <%= @recipe.name %>
+  <% if @recipe.user_id == current_user.id %>
+    <%= link_to 'レシピ名を編集する', edit_recipe_path(@recipe) %>
+  <% end %>
 </p>
 
 <p>
@@ -28,5 +31,8 @@
 <%= render "recipe_process" %>
 <%= render "add_step" %>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<% if @recipe.user_id == current_user.id %>
+  <%= link_to 'このレシピを削除する', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %><br>
+<%= link_to 'レシピ一覧に戻る', recipes_path %><br>
+<%= link_to '自宅にある食材一覧に戻る', foods_path %>

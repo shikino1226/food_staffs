@@ -2,10 +2,8 @@
 <% @search_recipes.each do |recipe| %>
   <tr>
     <td><%= recipe.name %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <td><%= link_to '詳細を見る', recipe %></td>
+  </tr><br>
 <% end %>
 <br>
 <%= link_to '新しいレシピを登録する', new_recipe_path %>
