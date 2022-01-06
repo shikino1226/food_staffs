@@ -1,9 +1,24 @@
-<tr>
-  <td><%= recipe_foods.contents %></td>
-  <td><%= recipe_foods.quantity %></td>
-  <td>
-    <% if @recipe.user_id == current_user.id %>
-      <%= link_to '削除する', recipe_foods, method: :delete, data: { confirm: 'Are you sure?' } %>
+<table>
+  <thead>
+    <tr>
+      <th>食材</th>
+      <th>量</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipe_foods.each_with_index do |recipe_food,i| %>
+      <tr>
+        <td><%= i + 1 %>．</td>
+        <td><%= recipe_food.contents %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td>
+          <% if @recipe.user_id == current_user.id %>
+            <%= link_to '削除する', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
-  </td>
-</tr>
+  </tbody>
+</table>

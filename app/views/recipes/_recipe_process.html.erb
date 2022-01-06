@@ -7,8 +7,9 @@
   </thead>
 
   <tbody>
-    <% @recipe_processes.each do |recipe_process| %>
+    <% @recipe_processes.each_with_index do |recipe_process,i| %>
       <tr>
+        <td><%= i + 1 %>．</td>
         <td><%= recipe_process.step %></td>
         <td>
           <% if @recipe.user_id == current_user.id %>
