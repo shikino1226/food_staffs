@@ -1,7 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%if user_signed_in? %>
-  <%= link_to "食材を見る", foods_path(current_user.id) %>
-<% else %>
-  <%= link_to "ログイン", new_user_session_path, class: "link_to_login" %>
-<%end%>
+<h1 class="slide s1">その調味料</h1>
+<h1 class="slide s2">その食材</h1>
+<h1 class="slide s3">賞味期限過ぎてませんか？</h1>
+<div class="box-back">
+  <div class="box">
+    <p class="text">Food Staffアプリは自宅にある調味料や食材の賞味期限を登録して期限切れになりそうな食材をわかりやすくするアプリです。冷蔵庫の中や棚の中に眠っている食材や調味料を賞味期限以内に使用できるように管理したくて作成しました。</p>
+  </div>
+</div>

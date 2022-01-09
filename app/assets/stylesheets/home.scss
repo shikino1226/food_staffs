@@ -1,3 +1,87 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.title_background{
+  background-color: #ffebe9;
+  height: 100px;
+  border-top: solid 10px #ff7d6e;
+  position: relative;
+}
+.title{
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  color: brown;
+  text-shadow:
+  0 0.05em 0.08em rgba(0,0,0,0.7);
+}
+.icon_flex li{
+  list-style: none;
+  display: block;
+  font-size: 20px;
+}
+.foods{
+  display: block;
+  text-decoration: none;
+  background-color: rgb(214, 122, 122);
+  color: white !important;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  right: 40%;
+}
+.user_name{
+  display: block;
+  text-decoration: none;
+  color: black !important;
+  position: absolute;
+  right: 5%;
+  top: 10%;
+}
+.logout{
+  display: block;
+  text-decoration: none;
+  background-color: brown;
+  color: white !important;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 100px;
+  position: absolute;
+  right: 5%;
+  text-align: center;
+}
+.slide {
+  text-align: center;
+  opacity: 0;
+  animation: fadein 6s ease forwards;
+  text-shadow: 1px 2px 3px #808080;
+}
+@keyframes fadein {
+  100% {  opacity: 1;}
+}
+
+.s1 {animation-delay: 0s;}
+.s2 {animation-delay: 3s;}
+.s3 {animation-delay: 5s;}
+
+.box-back{
+  width: 100%;
+  height: auto;
+}
+.box{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #ff7d6e;
+  background: #ffebe9;
+  border-top: solid 10px #ff7d6e;
+  width: 500px;
+  height: 180px;
+  margin: 30px auto;
+}
+.text {
+  font-size: 20px;
+  line-height: 30px
+}
+.login_user{
+  position: absolute;
+  top: 45%;
+}
