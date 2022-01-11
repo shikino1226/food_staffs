@@ -1,6 +1,6 @@
 <dl class="searchbox">
   <%= search_form_for @search, url: search_recipes_path do |f| %>
-    <dt><%= f.text_field :name_or_recipe_foods_contents_cont ,placeholder: 'レシピを検索する...' %></dt>
-    <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+    <dt><%= f.text_field :name_or_recipe_foods_contents_cont ,placeholder: 'レシピを検索する...', class: 'text_field' %></dt><br>
+    <dd><%= f.submit ("検索") , class: 'decorated-btn2 click-down2'%></dd>
   <% end %>
 </dl>

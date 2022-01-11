@@ -12,16 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <span class="item6">食材名</span>
     <%= form.text_field :name %>
-  </div>
-
+  </div><br>
   <div class="field">
-    <%= form.label :expiry_date %>
+    <span class="item6">賞味期限</span>
     <%= form.date_field :expiry_date %>
-  </div>
+  </div><br>
   <%= form.hidden_field :user_id, value:current_user.id %>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value="食材を登録する", class: 'decorated-btn click-down'%>
   </div>
 <% end %>

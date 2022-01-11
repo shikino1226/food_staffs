@@ -1,6 +1,6 @@
 .title_background{
   background-color: #ffebe9;
-  height: 100px;
+  height: 150px;
   border-top: solid 10px #ff7d6e;
   position: relative;
 }
@@ -86,4 +86,24 @@
 .login_user{
   position: absolute;
   top: 45%;
+}
+.decorated-btn2 {
+  background-color: rgb(219, 205, 187);
+  font-size: 15px;
+  border-radius: 5px;
+  border-bottom: solid 3px rgb(180, 134, 107);
+  box-shadow: 3px 3px 3px gray;
+  transition: 0.3s;
+}
+
+.click-down2:active {
+  transform: translateY(2px);
+  border-bottom: none;
+}
+
+.decorated-btn2:hover {
+  background-color: brown;
+}
+.text_field{
+  height: 30px;
 }
