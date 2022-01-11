@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
-
-<p>
-  <strong>Expiry date:</strong>
-  <%= @food.expiry_date %>
-</p>
-
+<div>
+  <strong class="item4">食材名:</strong>
+  <span class="item5"><%= @food.name %></span>
+</div>
+<br><br>
+<div>
+  <strong class="item4">賞味期限:</strong>
+  <span class="item5"><%= @food.expiry_date %></span>
+</div>
+<%= link_to '編集する', edit_food_path(@food), class:"food_edit" %>
 <dl class="searchbox">
   <%= search_form_for @search, url: search_recipes_path do |f| %>
     <dt hidden><%= f.text_field :name_or_recipe_foods_contents_cont ,value: @food.name %></dt>
-    <dd><%= f.submit ("この食材を使ったレシピを検索する") , class: 'search-btn'%></dd>
+    <dd><%= f.submit ("この食材を使ったレシピを検索する") , class: 'decorated-btn click-down'%></dd>
   <% end %>
 </dl>
-
-<%= link_to '編集する', edit_food_path(@food) %> |
