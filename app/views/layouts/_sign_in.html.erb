@@ -1,7 +1,8 @@
 <div class="title_background">
   <% if user_signed_in? %>
     <ul class="icon_flex">
-      <li><%= link_to "登録した食材を見る", foods_path(current_user.id), class: "foods" %></li><br>
+      <li><%= render 'shared/search' %></li>
+      <li><%= link_to "登録した食材一覧を見る", foods_path(current_user.id), class: "foods" %></li><br>
       <li><%= link_to "#{current_user.name}",home_index_path, class: "user_name" %></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout"%></li>
     </ul>
