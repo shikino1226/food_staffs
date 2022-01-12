@@ -114,3 +114,94 @@
 .sign_up_field, .log_in_field{
   position: relative;
 }
+// 新規アカウント
+
+.Mandatory{
+  height: 20px;
+  width: 80px;
+  background-color: red;
+  border-radius: 7px;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.new_account_back{
+  border: 1px solid gray;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  position: relative;
+  left: 40%;
+}
+.new_account_field{
+  background-color: white;
+}
+.new_account_field1{
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.account_submit{
+  height: 50px;
+  width: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: skyblue;
+  border: none;
+  color: white;
+  position: relative;
+  top: 10px;
+}
+// ログインアカウント
+.login_page{
+  width: auto;
+}
+.account_title{
+  position: relative;
+  left: 40%;
+}
+.login_account_back{
+  position: relative;
+  left: 40%;
+  border: 1px solid gray;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login_account_field{
+  background-color: white;
+}
+.login_account_field1{
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.link_new{
+  text-decoration: none;
+  font-size: 20px;
+  color: blue!important;
+}
+// アカウント編集
+.edit_account_field1{
+  height: 100px;
+  font-size: 20px;
+}
+.edit_account_field2{
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.edit_back{
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px 180px;
+  border-radius: 5px;
+  text-align: center;
+}
+.new_account_back{
+  height: 600px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+}

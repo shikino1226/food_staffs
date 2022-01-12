@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>レシピ名</strong>
   <%= @recipe.name %>
@@ -21,4 +19,3 @@
 <% if @recipe.user_id == current_user.id %>
   <%= link_to 'このレシピを削除する', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %><br>
-<%= link_to 'レシピ一覧に戻る', recipes_path %>
