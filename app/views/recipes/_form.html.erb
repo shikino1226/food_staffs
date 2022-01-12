@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <p>レシピ名</p>
+    <p class="item7">レシピ名</p>
     <%= form.text_field :name %>
   </div>
 
   <%= form.hidden_field :user_id, value:current_user.id %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit value="次へ", class: 'decorated-btn click-down'%>
   </div>
 <% end %>

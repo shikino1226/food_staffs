@@ -8,3 +8,6 @@ ja:
       food:
         name: 食材名
         expiry_date: 賞味期限
+    attributes:
+      recipe:
+        name: レシピ名

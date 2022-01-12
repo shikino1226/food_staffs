@@ -5,7 +5,12 @@
   font-size: 20px;
   background: linear-gradient(transparent 50%, rgb(219, 187, 187) 50%);
 }
-.food_edit{
+.item7{
+  display: inline-block;
+  font-size: 20px;
+  background: linear-gradient(transparent 50%, rgb(204, 180, 152) 50%);
+}
+.food_edit, .recipe_name_submit{
   display: block;
   text-decoration: none;
   background: linear-gradient(transparent 50%, rgb(204, 180, 152) 50%);
