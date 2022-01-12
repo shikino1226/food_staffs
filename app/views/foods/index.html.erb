@@ -14,7 +14,7 @@
   <tbody>
     <% @foods.each do |food| %>
       <tr>
-        <td class="food_name "><%= food.name %></td>
+        <td class="food_name"><%= food.name %></td>
         <td class="expiry_date item1"><%= food.expiry_date %></td>
         <% if (food.expiry_date - Date.current).to_i > 0 %>
           <td class="item1 alert1">賞味期限まであと<span class="alert1_1"><%= (food.expiry_date - Date.current).to_i %></span>日です</td>
