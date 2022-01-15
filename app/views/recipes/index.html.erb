@@ -2,24 +2,15 @@
 
 <h1 class="new_food_title">レシピ一覧</h1>
 
-<table>
-  <thead>
+<% @recipes.each_with_index do |recipe,i| %>
+  <table>
     <tr>
-      <th>レシピ名</th>
-      <th colspan="3"></th>
+      <td class="recipe_all_index"><%= i + 1 %>．</td>
+      <td><%= link_to "#{recipe.name}", recipe, class:"recipe_all_detail"  %></td>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.name %></td>
-        <td><%= link_to '詳細を見る', recipe %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </table>
+<% end %>
 
 <br>
 
-<%= link_to 'レシピを登録する', new_recipe_path %>
+<%= link_to '新しいレシピを登録する', new_recipe_path, class:"new_recipe" %><br>
