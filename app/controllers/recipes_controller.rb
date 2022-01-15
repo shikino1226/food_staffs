@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
     @recipe_foods = RecipeFood.where(recipe_id: @recipe.id)
     @recipe_process = RecipeProcess.new
     @recipe_processes = RecipeProcess.where(recipe_id: @recipe.id)
+    @user = User.find(@recipe.user_id)
   end
 
   def new
@@ -24,7 +25,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
+        format.html { redirect_to recipe_url(@recipe), notice: "レシピを作成しました。材料と作り方を登録してください." }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,7 +37,7 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
-        format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully updated." }
+        format.html { redirect_to recipe_url(@recipe), notice: "レシピ名を編集しました。" }
         format.json { render :show, status: :ok, location: @recipe }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,7 +50,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: "Recipe was successfully destroyed." }
+      format.html { redirect_to recipes_url, notice: "レシピを削除しました。" }
       format.json { head :no_content }
     end
   end

@@ -1,14 +1,13 @@
-<p>
-  <strong>レシピ名</strong>
-  <%= @recipe.name %>
+<div>
   <% if @recipe.user_id == current_user.id %>
-    <%= link_to 'レシピ名を編集する', edit_recipe_path(@recipe) %>
+    <%= link_to "#{@recipe.name}", edit_recipe_path(@recipe), class:"recipe_title1" %>
+  <%else%>
+    <p class="recipe_title2"><%= @recipe.name %></p>
   <% end %>
-</p>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @recipe.user_id %>
+<p class="recipe_user_name">
+  <%= @user.name %><span>さんのレシピです</span>
 </p>
 
 <%= render "recipe_foods" %>
@@ -17,5 +16,6 @@
 <%= render "add_step" %>
 
 <% if @recipe.user_id == current_user.id %>
-  <%= link_to 'このレシピを削除する', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'このレシピを削除する', @recipe, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete_recipe" %>
 <% end %><br>
+<%= link_to 'Back', :back, class:"back" %>

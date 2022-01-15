@@ -5,10 +5,15 @@
   position: relative;
 }
 .title{
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  top: 50px;
   text-align: center;
   font-size: 40px;
   font-weight: 800;
-  color: brown;
+  padding: 0px 30px;
+  color: brown!important;
   text-shadow:
   0 0.05em 0.08em rgba(0,0,0,0.7);
 }
@@ -20,14 +25,52 @@
 .foods{
   display: block;
   text-decoration: none;
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 300px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
   background-color: rgb(214, 122, 122);
   color: white !important;
   margin-top: 10px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
   position: absolute;
-  right: 40%;
+  right: 44%;
   top: 20%;
+  border-radius: 50vh;
+  transition: 0.3s;
+}
+
+.foods::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border-radius: 50vh;
+}
+
+.foods::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #333333;
+  border-right: 3px solid #333333;
+}
+
+.foods:hover {
+  text-decoration: none;
+  background-color: #cccccc;
 }
 .user_name{
   display: block;
