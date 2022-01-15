@@ -1,8 +1,8 @@
 <div>
   <% if @recipe.user_id == current_user.id %>
-    <%= link_to "#{@recipe.name}", edit_recipe_path(@recipe), class:"recipe_title1" %>
+    <%= link_to "#{@recipe.name}", edit_recipe_path(@recipe), class:"recipe_title" %>
   <%else%>
-    <p class="recipe_title2"><%= @recipe.name %></p>
+    <p class="recipe_title"><%= @recipe.name %></p>
   <% end %>
 </div>
 

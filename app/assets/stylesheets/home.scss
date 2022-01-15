@@ -160,6 +160,8 @@
 // 新規アカウント
 
 .Mandatory{
+  position: relative;
+  top: 65px;
   height: 20px;
   width: 80px;
   background-color: red;
@@ -170,7 +172,6 @@
   color: white;
 }
 .new_account_back{
-  border: 1px solid gray;
   width: 500px;
   height: 100px;
   text-align: center;
@@ -188,9 +189,9 @@
 .account_submit{
   height: 50px;
   width: 400px;
-  margin-bottom: 20px;
+  margin: 20px;
   border-radius: 10px;
-  background-color: skyblue;
+  background-color: brown;
   border: none;
   color: white;
   position: relative;
@@ -203,11 +204,11 @@
 .account_title{
   position: relative;
   left: 40%;
+  font-size: 30px;
 }
 .login_account_back{
   position: relative;
   left: 40%;
-  border: 1px solid gray;
   width: 500px;
   height: 600px;
   text-align: center;
