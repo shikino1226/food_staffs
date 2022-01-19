@@ -41,7 +41,7 @@ RSpec.describe "UserAuthentications", type: :system do
 
       it 'エラーが表示されること' do
         post user_registration_path, params: { user: invalid_user_params }
-        expect(response.body).to include 'translation missing: ja.errors.messages.not_saved'
+        expect(response.body).to include '保存されませんでした'
       end
     end
   end
