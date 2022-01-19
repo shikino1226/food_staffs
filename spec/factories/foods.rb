@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :food do
-    content { "food test" }
-    association :user
+    name { "牛乳" }
+    expiry_date { 2022/12/12 }
+    user
   end
 end
