@@ -161,6 +161,7 @@
 
 .Mandatory{
   position: relative;
+  left: 400px;
   top: 65px;
   height: 20px;
   width: 80px;
@@ -197,9 +198,13 @@
   position: relative;
   top: 10px;
 }
+.user_box{
+  border-bottom: red solid 2px;
+}
 // ログインアカウント
 .login_page{
   width: auto;
+  height: 800px;
 }
 .account_title{
   position: relative;
