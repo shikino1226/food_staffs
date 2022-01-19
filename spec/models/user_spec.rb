@@ -7,10 +7,10 @@ describe User do
       user.valid?
       expect(user).to be_valid
     end
-    it 'アドレスがなければユーザー登録できないこと' do
-      user = build(:user, email: "")
+    it '名前がなければユーザー登録できないこと' do
+      user = build(:user, name:"")
       user.valid?
-      expect(user.errors[:email]).to include("を入力してください")
+      expect(user.errors[:name]).to include("を入力してください")
     end
   end
 end
