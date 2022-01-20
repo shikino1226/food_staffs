@@ -11,10 +11,10 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="food_items">
     <% @foods.each do |food| %>
       <tr>
-        <td class="food_name"><%= food.name %></td>
+        <td class="food_name"><%= link_to "#{food.name}", food, class: "item1 item2" %></td>
         <td class="expiry_date item1"><%= food.expiry_date %></td>
         <% if (food.expiry_date - Date.current).to_i > 0 %>
           <td class="item1 alert1">賞味期限まであと<span class="alert1_1"><%= (food.expiry_date - Date.current).to_i %></span>日です</td>
@@ -23,7 +23,6 @@
         <% else %>
           <td class="item1 alert3">賞味期限から<%= (Date.current - food.expiry_date).to_i %>日過ぎています</td>
         <% end %>
-        <td ><%= link_to '詳細を見る', food, class: "item1 item2" %></td>
         <td><%= link_to '編集する', edit_food_path(food), class: "item1 item2" %></td>
         <td><%= link_to '削除する', food, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "item1 item2" %></td>
       </tr>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe User do
-  describe 'Userテスト' do
+RSpec.describe 'Userモデルのテスト', type: :model do
+  describe 'バリデーションのテスト' do
     it 'ユーザー登録にバリデーションがかかること' do
       user = build(:user)
       user.valid?
