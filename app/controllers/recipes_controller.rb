@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-    @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(20)
+    @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(10)
   end
 
   def show

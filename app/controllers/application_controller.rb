@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def set_search
     @search = Recipe.ransack(params[:q])
     @search_recipes = @search.result.distinct
-    @search_recipes = Kaminari.paginate_array(@search_recipes).page(params[:page]).per(20)
+    @search_recipes = Kaminari.paginate_array(@search_recipes).page(params[:page]).per(10)
     @search_recipes_count = @search.result(distinct: true).count
   end
 

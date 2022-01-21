@@ -8,6 +8,7 @@ RSpec.describe "Recipes", type: :system do
   let!(:recipe3) { create(:recipe, name: "オニオンポタージュ", user_id: user2.id) }
   let!(:recipe_food) { create(:recipe_food, recipe_id: recipe.id) }
   let!(:recipe_process) { create(:recipe_process, recipe_id: recipe.id) }
+  let!(:related_recipes) {create_list(:recipe, 25, name: "パンプキンスープ", user_id: user.id)}
 
   describe "Get /recipes/index" do
     before do
@@ -38,6 +39,20 @@ RSpec.describe "Recipes", type: :system do
     it "「新しいレシピを登録する」をクリックするとレシピ作成画面へ移動すること" do
       click_on '新しいレシピを登録する'
       expect(page).to have_current_path new_recipe_path
+    end
+
+    context 'レシピが10個以上あるとき' do
+      it 'ページネーションが存在すること' do
+        within('.pagination') do
+          expect(page).to have_selector '.page', count: 3
+        end
+      end
+
+      it '１ページにレシピは10個ずつ表示されること' do
+        within('.recipe_item') do
+          expect(page).to have_selector '.recipe_all_detail', count: 10
+        end
+      end
     end
   end
 
