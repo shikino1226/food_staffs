@@ -53,6 +53,11 @@ RSpec.describe "Recipes", type: :system do
       end
     end
 
+    it "自分で作成したレシピの場合レシピ名をクリックするとレシピ編集画面へ移動すること" do
+      click_on 'ポテトスープ'
+      expect(page).to have_current_path edit_recipe_path(recipe.id)
+    end
+
     it "レシピを作成したユーザー名が表示されること" do
       within('.recipe_user_name') do
         expect(page).to have_content "taro"
@@ -82,12 +87,39 @@ RSpec.describe "Recipes", type: :system do
       end
     end
 
-    it "作り方を追加すると作り方に登録されること" do
+    it "作り方を追加すると作り方リストに登録されること" do
       fill_in 'recipe_process[step]', with: '玉ねぎをスライスして飴色になるまで炒める'
       find("#add_step").click
       within('.design05') do
         expect(page).to have_content "玉ねぎをスライスして飴色になるまで炒める"
       end
+    end
+  end
+
+  describe "他のユーザーのレシピ詳細画面" do
+    before do
+      sign_in user
+      visit recipe_path(recipe3.id)
+    end
+
+    it "他のユーザーのレシピ詳細画面では食材の追加や作り方の登録ができないこと" do
+      within('.recipe_field') do
+        expect(page).not_to have_content "食材を追加"
+        expect(page).not_to have_content "作り方を登録する"
+      end
+    end
+  end
+
+  describe "レシピの検索" do
+    before do
+      sign_in user
+      visit home_index_path
+    end
+
+    it "食材を入力すると関連するレシピが検索できる" do
+      fill_in 'q[name_or_recipe_foods_contents_cont]', with: 'じゃがいも'
+      click_on '検索'
+      expect(page).to have_current_path search_recipes_path, ignore_query: true
     end
   end
 end
