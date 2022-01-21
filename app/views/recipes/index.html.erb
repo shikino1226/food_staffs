@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
-
 <h1 class="new_food_title">レシピ一覧</h1>
-
-<% @recipes.each_with_index do |recipe,i| %>
-  <table>
-    <tr>
-      <td class="recipe_all_index"><%= i + 1 %>．</td>
-      <td><%= link_to "#{recipe.name}", recipe, class:"recipe_all_detail"  %></td>
-    </tr>
-  </table>
-<% end %>
-
+<div class="recipe_item">
+  <% @recipes.each_with_index do |recipe,i| %>
+    <table>
+      <tr>
+        <td class="recipe_all_index"><%= i + 1 %>．</td>
+        <td><%= link_to "#{recipe.name}", recipe, class:"recipe_all_detail" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
 <br>
-
 <%= link_to '新しいレシピを登録する', new_recipe_path, class:"new_recipe" %><br>

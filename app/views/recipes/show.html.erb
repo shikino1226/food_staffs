@@ -5,16 +5,13 @@
     <p class="recipe_title"><%= @recipe.name %></p>
   <% end %>
 </div>
-
 <p class="recipe_user_name">
   <%= @user.name %><span>さんのレシピです</span>
 </p>
-
 <%= render "recipe_foods" %>
 <%= render "add_contents" %>
 <%= render "recipe_process" %>
 <%= render "add_step" %>
-
 <% if @recipe.user_id == current_user.id %>
   <%= link_to 'このレシピを削除する', @recipe, method: :delete, data: { confirm: '本当に削除しますか？' }, class: "delete_recipe" %>
 <% end %><br>

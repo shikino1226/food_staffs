@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :recipe do
     name { "ポテトスープ" }
-    user
+    association :user
   end
 end
