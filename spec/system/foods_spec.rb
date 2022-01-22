@@ -4,6 +4,7 @@ RSpec.describe "Foods", type: :system do
   let(:user) { create(:user) }
   let!(:food) { create(:food, user_id: user.id) }
   let!(:food2) { create(:food, name: "マヨネーズ", expiry_date:"2022-11-12", user_id: user.id) }
+  let!(:related_foods) {create_list(:food, 25, name: "ケチャップ", user_id: user.id)}
 
   describe "Get /foods/index" do
     before do
@@ -26,6 +27,20 @@ RSpec.describe "Foods", type: :system do
     it "食材が複数あっても表示されること" do
       expect(page).to have_selector ".food_items", text: "牛乳"
       expect(page).to have_selector ".food_items", text: "マヨネーズ"
+    end
+
+    context '登録した食材が10個以上あるとき' do
+      it 'ページネーションが存在すること' do
+        within('.pagination') do
+          expect(page).to have_selector '.page', count: 3
+        end
+      end
+
+      it '１ページに食材は10個ずつ表示されること' do
+        within('.food_items') do
+          expect(page).to have_selector '.food_item', count: 10
+        end
+      end
     end
   end
 

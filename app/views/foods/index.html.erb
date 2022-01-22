@@ -10,7 +10,7 @@
   </thead>
   <tbody class="food_items">
     <% @foods.each do |food| %>
-      <tr>
+      <tr class="food_item">
         <td class="food_name"><%= link_to "#{food.name}", food, class: "item1 item2" %></td>
         <td class="expiry_date item1"><%= food.expiry_date %></td>
         <% if (food.expiry_date - Date.current).to_i > 0 %>
