@@ -93,6 +93,17 @@
   background-color: rgb(172, 154, 154);
   border-radius: 5px;
 }
+.add_food{
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(transparent 50%, rgb(236, 184, 177) 50%);
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 250px;
+  text-align: center;
+  font-size: 20px;
+}
 @media screen and (max-width: 480px) {
   .item1{
     height: 50px;
