@@ -27,7 +27,6 @@
   font-size: 20px;
   z-index: 1;
 }
-
 .recipe_all_index:after, .recipe_index:after{
   display: inline;
   content: "";
@@ -40,7 +39,6 @@
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
-
 .recipe_all_detail, .recipe_detail{
   display: block;
   width: 500px;
@@ -72,7 +70,6 @@
   background-color:  rgb(180, 134, 107);
   transition: 0.3s;
 }
-
 .recipe_title::before {
   content: '';
   position: absolute;
@@ -83,7 +80,6 @@
   background-color: #bbbbbb;
   transition: 0.2s ease 0s;
 }
-
 .recipe_title::after {
   content: '';
   position: absolute;
@@ -94,15 +90,12 @@
   background-color: #bbbbbb;
   transition: 0.2s ease 0.2s;
 }
-
 .recipe_title:hover::before {
   width: 0%;
 }
-
 .recipe_title:hover::after {
   height: 0%;
 }
-
 .recipe_title:hover {
   text-decoration: none;
   background-color: rgb(194, 156, 162);
@@ -178,7 +171,6 @@
   text-align: left!important;
 }
 // レシピ削除ボタン
-
 .delete_recipe {
   display: inline-block;
   border: 1px solid;
@@ -207,11 +199,23 @@
     border-right: solid 2px #614f38;
     transform: translateY(-50%) rotate(45deg) skewX(-45deg);;
   }
-
   &:hover {
     &:after {
       right:5px;
       height: 40px;
     }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .recipe_all_detail, .recipe_detail{
+    width: 270px;
+  }
+  .recipe_title{
+    width: 200px;
+  }
+  .recipe_user_name{
+    left: 180px;
+    top: 0px;
   }
 }

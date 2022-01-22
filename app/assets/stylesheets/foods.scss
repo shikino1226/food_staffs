@@ -93,3 +93,11 @@
   background-color: rgb(172, 154, 154);
   border-radius: 5px;
 }
+@media screen and (max-width: 480px) {
+  .item1{
+    height: 50px;
+  }
+  .item3{
+    height: 100px;
+  }
+}

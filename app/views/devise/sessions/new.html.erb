@@ -3,15 +3,15 @@
   <div class = "login_account_back">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login_account_field"}) do |f| %>
       <div>
-        <p class = "Mandatory">必須</p>
+        <p class = "Mandatory l_Mandatory">必須</p>
         <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前",class: "login_account_field1"   %>
       </div>
       <div>
-        <p class = "Mandatory">必須</p>
+        <p class = "Mandatory l_Mandatory">必須</p>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス",class: "login_account_field1"  %>
       </div>
       <div >
-        <p class = "Mandatory">必須</p>
+        <p class = "Mandatory l_Mandatory">必須</p>
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード",class: "login_account_field1"  %>
       </div>
       <% if devise_mapping.rememberable? %>
@@ -21,7 +21,7 @@
         </div>
       <% end %>
       <div>
-        <%= f.submit "ログイン", class: "account_submit" %>
+        <%= f.submit "ログイン", class: "account_submit l_account_submit" %>
       </div>
     <% end %>
   </div>

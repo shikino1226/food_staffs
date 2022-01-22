@@ -254,3 +254,42 @@
   margin-bottom: 50px;
   border-radius: 5px;
 }
+@media screen and (max-width: 959px) {
+  .foods{
+    right: 210px;
+    top: 0px;
+    width: 240px;
+  }
+  .login_page{
+    position: relative;
+    left: -120px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .box{
+    width: 300px;
+    height: 300px;
+  }
+  .foods{
+    top: 150px;
+    right: 60px;
+  }
+  .new_account_back{
+    width: 300px;
+  }
+  .Mandatory{
+    left: 260px;
+  }
+  .account_submit{
+    width: 300px;
+  }
+  .login_account_back{
+    left: 0px;
+  }
+  .l_Mandatory{
+    left: 360px;
+  }
+  .l_account_submit{
+    left: 40px;
+  }
+}

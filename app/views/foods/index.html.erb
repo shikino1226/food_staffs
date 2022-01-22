@@ -20,8 +20,8 @@
         <% else %>
           <td class="item1 alert3">賞味期限から<%= (Date.current - food.expiry_date).to_i %>日過ぎています</td>
         <% end %>
-        <td><%= link_to '編集する', edit_food_path(food), class: "item1 item2" %></td>
-        <td><%= link_to '削除する', food, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "item1 item2" %></td>
+        <td><%= link_to '編集する', edit_food_path(food), class: "item1 item2 item3" %></td>
+        <td><%= link_to '削除する', food, method: :delete, data: { confirm: '本当に削除しますか?' }, class: "item1 item2 item3" %></td>
       </tr>
     <% end %>
   </tbody>
