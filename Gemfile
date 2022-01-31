@@ -69,4 +69,6 @@ gem 'ransack'
 gem 'rails-i18n'
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'unicorn'
+group :production do
+  gem 'unicorn'
+end
