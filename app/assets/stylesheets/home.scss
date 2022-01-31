@@ -1,0 +1,295 @@
+.title_background{
+  background-color: #ffebe9;
+  height: 150px;
+  border-top: solid 10px #ff7d6e;
+  position: relative;
+}
+.title{
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  top: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  padding: 0px 30px;
+  color: brown!important;
+  text-shadow:
+  0 0.05em 0.08em rgba(0,0,0,0.7);
+}
+.icon_flex li{
+  list-style: none;
+  display: block;
+  font-size: 20px;
+}
+.foods{
+  display: block;
+  text-decoration: none;
+  position: relative;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 300px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: rgb(214, 122, 122);
+  color: white !important;
+  margin-top: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  right: 44%;
+  top: 20%;
+  border-radius: 50vh;
+  transition: 0.3s;
+}
+
+.foods::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #f2f2f2;
+  border-radius: 50vh;
+}
+
+.foods::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #333333;
+  border-right: 3px solid #333333;
+}
+
+.foods:hover {
+  text-decoration: none;
+  background-color: #cccccc;
+}
+.user_name{
+  display: block;
+  text-decoration: none;
+  color: black !important;
+  position: absolute;
+  right: 5%;
+  top: 10%;
+}
+.logout{
+  display: block;
+  text-decoration: none;
+  background-color: brown;
+  color: white !important;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  right: 5%;
+  text-align: center;
+}
+.slide {
+  text-align: center;
+  opacity: 0;
+  animation: fadein 6s ease forwards;
+  text-shadow: 1px 2px 3px #808080;
+}
+@keyframes fadein {
+  100% {  opacity: 1;}
+}
+
+.s1 {animation-delay: 0s;}
+.s2 {animation-delay: 3s;}
+.s3 {animation-delay: 5s;}
+
+.box-back{
+  width: 100%;
+  height: auto;
+}
+.box{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  color: #ff7d6e;
+  background: #ffebe9;
+  border-top: solid 10px #ff7d6e;
+  width: 500px;
+  height: 200px;
+  margin: 30px auto;
+}
+.text {
+  font-size: 20px;
+  line-height: 30px
+}
+.login_user{
+  position: absolute;
+  top: 45%;
+}
+.decorated-btn2 {
+  background-color: rgb(219, 205, 187);
+  font-size: 15px;
+  border-radius: 5px;
+  border-bottom: solid 3px rgb(180, 134, 107);
+  box-shadow: 3px 3px 3px gray;
+  transition: 0.3s;
+}
+
+.click-down2:active {
+  transform: translateY(2px);
+  border-bottom: none;
+}
+
+.decorated-btn2:hover {
+  background-color: brown;
+}
+.text_field{
+  height: 30px;
+}
+.new_user{
+  position: absolute;
+  top: 10%;
+}
+.sign_up_field, .log_in_field{
+  position: relative;
+}
+// 新規アカウント
+
+.Mandatory{
+  position: relative;
+  left: 400px;
+  top: 65px;
+  height: 20px;
+  width: 80px;
+  background-color: red;
+  border-radius: 7px;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  color: white;
+}
+.new_account_back{
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  position: relative;
+  left: 40%;
+}
+.new_account_field{
+  background-color: white;
+}
+.new_account_field1{
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.account_submit{
+  height: 50px;
+  width: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: brown;
+  border: none;
+  color: white;
+  position: relative;
+  top: 10px;
+}
+.user_box{
+  border-bottom: red solid 2px;
+}
+// ログインアカウント
+.login_page{
+  width: auto;
+  height: 800px;
+}
+.account_title{
+  position: relative;
+  left: 40%;
+  font-size: 30px;
+}
+.login_account_back{
+  position: relative;
+  left: 40%;
+  width: 500px;
+  height: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.login_account_field{
+  background-color: white;
+}
+.login_account_field1{
+  height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.link_new{
+  text-decoration: none;
+  font-size: 20px;
+  color: blue!important;
+}
+// アカウント編集
+.edit_account_field1{
+  height: 100px;
+  font-size: 20px;
+}
+.edit_account_field2{
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+}
+.edit_back{
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 10px 180px;
+  border-radius: 5px;
+  text-align: center;
+}
+.new_account_back{
+  height: 600px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 959px) {
+  .foods{
+    right: 210px;
+    top: 0px;
+    width: 240px;
+  }
+  .login_page{
+    position: relative;
+    left: -120px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .box{
+    width: 300px;
+    height: 300px;
+  }
+  .foods{
+    top: 150px;
+    right: 60px;
+  }
+  .new_account_back{
+    width: 300px;
+  }
+  .Mandatory{
+    left: 260px;
+  }
+  .account_submit{
+    width: 300px;
+  }
+  .login_account_back{
+    left: 0px;
+  }
+  .l_Mandatory{
+    left: 360px;
+  }
+  .l_account_submit{
+    left: 40px;
+  }
+}

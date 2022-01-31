@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: <%= Rails.application.credentials.db[:food_staff] %>
+  username: <%= Rails.application.credentials.db[:root] %>
+  password: <%= Rails.application.credentials.db[:Skn@62219891] %>
+  socket: <%= Rails.application.credentials.db[:/var/lib/mysql/mysql.sock] %>

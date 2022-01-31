@@ -1,0 +1,30 @@
+<div class= "login_page" >
+  <h2 class = "account_title">新しいアカウントを作成</h2>
+  <div class = "new_account_back">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "new_account_field"}) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="user_box">
+        <p class = "Mandatory">必須</p>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前" , class: "new_account_field1"%>
+      </div>
+      <div class="user_box">
+        <p class = "Mandatory">必須</p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "new_account_field1" %>
+      </div>
+      <div class="user_box">
+        <p class = "Mandatory">必須</p>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上で入力)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "new_account_field1" %>
+      </div>
+      <div class="user_box">
+        <p class = "Mandatory">必須</p>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "確認用パスワード", class: "new_account_field1" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "登録する", class: "account_submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>

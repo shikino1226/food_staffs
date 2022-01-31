@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      food: 食材
+      recipe: レシピ
+    attributes:
+      food:
+        name: 食材名
+        expiry_date: 賞味期限
+      recipe:
+        name: レシピ名

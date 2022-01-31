@@ -1,0 +1,24 @@
+<%= form_with(model: food) do |form| %>
+  <% if food.errors.any? %>
+    <div id="error_explanation">
+      <h2>必須項目を入力していないため登録できません</h2>
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <span class="item6">食材名</span>
+    <%= form.text_field :name %>
+  </div><br>
+  <div class="field">
+    <span class="item6">賞味期限</span>
+    <%= form.date_field :expiry_date %>
+  </div><br>
+  <%= form.hidden_field :user_id, value:current_user.id %>
+  <div class="actions">
+    <%= form.submit value="食材を登録する", class: 'decorated-btn click-down'%>
+  </div>
+<% end %>

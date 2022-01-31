@@ -1,0 +1,24 @@
+<table class="design04">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+      <th>食材</th>
+      <th>量</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe_foods.each_with_index do |recipe_food,i| %>
+      <tr>
+        <td><%= i + 1 %>．</td>
+        <td><%= recipe_food.contents %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td>
+          <% if @recipe.user_id == current_user.id %>
+            <%= link_to '削除する', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

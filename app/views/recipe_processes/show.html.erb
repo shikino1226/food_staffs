@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Step:</strong>
+  <%= @recipe_process.step %>
+</p>
+<p>
+  <strong>Recipe:</strong>
+  <%= @recipe_process.recipe_id %>
+</p>
+<%= link_to 'Edit', edit_recipe_process_path(@recipe_process) %> |
+<%= link_to 'Back', recipe_path(@recipe_process.recipe_id) %>

@@ -1,0 +1,16 @@
+<%= form_with model: @recipe_food do |form| %>
+  <% if @recipe.user_id == current_user.id %>
+    <div class="field">
+      <p class="item8">食材を追加</p>
+      <%= form.text_field :contents %>
+    </div>
+    <div class="field">
+      <p class="item8">量</p>
+      <%= form.text_field :quantity %>
+    </div>
+    <%= form.hidden_field :recipe_id, value:@recipe.id %>
+    <div class="actions">
+      <%= form.submit ("追加"), id:"add_content" %>
+    </div>
+  <% end %>
+<% end %>
