@@ -1,24 +1,10 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# アプリケーション名
+ "food dtaff"
+# アプリケーション概要
+　　食材の賞味期限を管理するアプリです。食材を使用したレシピの検索・レシピの登録も可能です。
+# URL
+ http://54.248.12.255:3000/
+# テスト用アカウント
+  test
+  1234567
+# 利用方法
